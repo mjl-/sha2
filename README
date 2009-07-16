@@ -1,0 +1,52 @@
+# status
+
+works.  passes tests.
+
+
+# intro
+
+this is a SHA-2 library and example tools, written to directly
+reflect the description of the algorithm in the FIPS 180-3 standard.
+it is not optimized for speed.  it is in written portable c.  it
+includes a simple program that can verify against the official test
+vectors.  the code is in the public domain for easy inclusion in
+other software.
+
+
+# install
+
+run "make" to compile the library (sha2.c) and the programs sha256
+and sha512.  there is no "install" target.  see "testing" below for
+testing against the test vectors.
+
+sha256 and sha512 calculate the hash on the data read from their
+standard input.  specifying the -o option makes them run the shorter
+output of the algorithm, resulting in 224 bits for sha256 and 384
+for sha512.
+
+
+# latest version
+
+get it from http://www.ueber.net/code/r/sha2
+
+
+# licence & author
+
+all files are in the public domain.  this code has been written by
+mechiel lukkien, reachable at mechiel@ueber.net or mechiel@xs4all.nl.
+
+
+# testing
+
+for testing, you'll need the test vectors:
+
+	http://csrc.nist.gov/groups/STM/cavp/documents/shs/shabytetestvectors.zip
+
+which is linked as "SHA Test Vectors for Hashing Byte-Oriented Messages" from:
+
+	http://csrc.nist.gov/groups/STM/cavp/index.html
+
+extract the files from shabytetestvectors.zip to this directory and
+run "make test".  each test prints a dot.  errors are printed on
+mismatch.  if no errors are printed (and the program exits with
+success status), all tests passed.
