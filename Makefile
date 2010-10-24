@@ -1,5 +1,7 @@
+CC=cc
+CFLAGS=-O3 -Wall -static
 LD=cc
-CFLAGS=-O3 -Wall
+LDFLAGS=-O3 -Wall -static
 
 H=\
 	types.h\
